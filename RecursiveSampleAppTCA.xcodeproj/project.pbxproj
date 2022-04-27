@@ -13,11 +13,15 @@
 		3353D4062809B99000B2A626 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D4052809B99000B2A626 /* Tests_macOSLaunchTests.swift */; };
 		3353D4072809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */; };
 		3353D4082809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */; };
-		3353D4092809B99000B2A626 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3E02809B98E00B2A626 /* ContentView.swift */; };
-		3353D40A2809B99000B2A626 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3E02809B98E00B2A626 /* ContentView.swift */; };
 		3353D40B2809B99000B2A626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3353D3E12809B98F00B2A626 /* Assets.xcassets */; };
 		3353D40C2809B99000B2A626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3353D3E12809B98F00B2A626 /* Assets.xcassets */; };
 		3353D41D2809BA5600B2A626 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3353D41C2809BA5600B2A626 /* ComposableArchitecture */; };
+		3353D41F280AFCC000B2A626 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D41E280AFCC000B2A626 /* TimelineView.swift */; };
+		3353D420280AFCC000B2A626 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D41E280AFCC000B2A626 /* TimelineView.swift */; };
+		3353D422280AFDA200B2A626 /* TimelineLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D421280AFDA200B2A626 /* TimelineLogCell.swift */; };
+		3353D423280AFDA200B2A626 /* TimelineLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D421280AFDA200B2A626 /* TimelineLogCell.swift */; };
+		3353D425280AFE6D00B2A626 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D424280AFE6D00B2A626 /* ProfileView.swift */; };
+		3353D426280AFE6D00B2A626 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D424280AFE6D00B2A626 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveSampleAppTCAApp.swift; sourceTree = "<group>"; };
-		3353D3E02809B98E00B2A626 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3353D3E12809B98F00B2A626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3353D3E62809B99000B2A626 /* RecursiveSampleAppTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecursiveSampleAppTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3353D3EC2809B99000B2A626 /* RecursiveSampleAppTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecursiveSampleAppTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,9 @@
 		3353D3FF2809B99000B2A626 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3353D4032809B99000B2A626 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		3353D4052809B99000B2A626 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		3353D41E280AFCC000B2A626 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		3353D421280AFDA200B2A626 /* TimelineLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLogCell.swift; sourceTree = "<group>"; };
+		3353D424280AFE6D00B2A626 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */,
-				3353D3E02809B98E00B2A626 /* ContentView.swift */,
+				3353D41E280AFCC000B2A626 /* TimelineView.swift */,
+				3353D421280AFDA200B2A626 /* TimelineLogCell.swift */,
+				3353D424280AFE6D00B2A626 /* ProfileView.swift */,
 				3353D3E12809B98F00B2A626 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -307,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3353D4092809B99000B2A626 /* ContentView.swift in Sources */,
+				3353D422280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
+				3353D425280AFE6D00B2A626 /* ProfileView.swift in Sources */,
+				3353D41F280AFCC000B2A626 /* TimelineView.swift in Sources */,
 				3353D4072809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3353D40A2809B99000B2A626 /* ContentView.swift in Sources */,
+				3353D423280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
+				3353D426280AFE6D00B2A626 /* ProfileView.swift in Sources */,
+				3353D420280AFCC000B2A626 /* TimelineView.swift in Sources */,
 				3353D4082809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
