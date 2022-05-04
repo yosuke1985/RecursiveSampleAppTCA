@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33344139282201B600414652 /* CowWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344138282201B600414652 /* CowWrapper.swift */; };
+		3334413A282201B600414652 /* CowWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33344138282201B600414652 /* CowWrapper.swift */; };
+		3334413C282201D200414652 /* Reducer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334413B282201D200414652 /* Reducer+Extension.swift */; };
+		3334413D282201D200414652 /* Reducer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334413B282201D200414652 /* Reducer+Extension.swift */; };
 		3353D3F82809B99000B2A626 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3F72809B99000B2A626 /* Tests_iOS.swift */; };
 		3353D3FA2809B99000B2A626 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D3F92809B99000B2A626 /* Tests_iOSLaunchTests.swift */; };
 		3353D4042809B99000B2A626 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D4032809B99000B2A626 /* Tests_macOS.swift */; };
@@ -42,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33344138282201B600414652 /* CowWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowWrapper.swift; sourceTree = "<group>"; };
+		3334413B282201D200414652 /* Reducer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+Extension.swift"; sourceTree = "<group>"; };
 		3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveSampleAppTCAApp.swift; sourceTree = "<group>"; };
 		3353D3E12809B98F00B2A626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3353D3E62809B99000B2A626 /* RecursiveSampleAppTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecursiveSampleAppTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +115,8 @@
 				3353D41E280AFCC000B2A626 /* TimelineView.swift */,
 				3353D421280AFDA200B2A626 /* TimelineLogCell.swift */,
 				3353D424280AFE6D00B2A626 /* ProfileView.swift */,
+				33344138282201B600414652 /* CowWrapper.swift */,
+				3334413B282201D200414652 /* Reducer+Extension.swift */,
 				3353D3E12809B98F00B2A626 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -316,9 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3353D422280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
+				3334413C282201D200414652 /* Reducer+Extension.swift in Sources */,
 				3353D425280AFE6D00B2A626 /* ProfileView.swift in Sources */,
 				3353D41F280AFCC000B2A626 /* TimelineView.swift in Sources */,
 				3353D4072809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */,
+				33344139282201B600414652 /* CowWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3353D423280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
+				3334413D282201D200414652 /* Reducer+Extension.swift in Sources */,
 				3353D426280AFE6D00B2A626 /* ProfileView.swift in Sources */,
 				3353D420280AFCC000B2A626 /* TimelineView.swift in Sources */,
 				3353D4082809B99000B2A626 /* RecursiveSampleAppTCAApp.swift in Sources */,
+				3334413A282201B600414652 /* CowWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

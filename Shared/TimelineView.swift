@@ -20,12 +20,11 @@ enum TimelineAction: Equatable {
 struct TimelineEnvironment {
 }
 
-let timelineReducer = Reducer<TimelineState, TimelineAction, TimelineEnvironment> { state, action, env in
-    switch action {
-    default:
-        return .none
-    }
-}
+let timelineReducer = Reducer<TimelineState, TimelineAction, TimelineEnvironment>.combine(
+    timelineLogCellStateReducer.forEach(state: \.timelineLogCellStateList,
+                                        action: /TimelineAction.timelineLogCellAction(index: action:),
+                                        environment: { _ in TimelineLogCellEnvironment()} )
+)
 
 struct TimelineView: View {
     var store: Store<TimelineState, TimelineAction>
