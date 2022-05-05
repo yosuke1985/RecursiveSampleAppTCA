@@ -26,6 +26,8 @@
 		3353D423280AFDA200B2A626 /* TimelineLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D421280AFDA200B2A626 /* TimelineLogCell.swift */; };
 		3353D425280AFE6D00B2A626 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D424280AFE6D00B2A626 /* ProfileView.swift */; };
 		3353D426280AFE6D00B2A626 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353D424280AFE6D00B2A626 /* ProfileView.swift */; };
+		33F6E014281A932A005B06C0 /* TCARecursionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6E013281A932A005B06C0 /* TCARecursionApp.swift */; };
+		33F6E015281A932A005B06C0 /* TCARecursionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6E013281A932A005B06C0 /* TCARecursionApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		3353D41E280AFCC000B2A626 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		3353D421280AFDA200B2A626 /* TimelineLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineLogCell.swift; sourceTree = "<group>"; };
 		3353D424280AFE6D00B2A626 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		33F6E013281A932A005B06C0 /* TCARecursionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCARecursionApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3353D3DF2809B98E00B2A626 /* RecursiveSampleAppTCAApp.swift */,
+				33F6E013281A932A005B06C0 /* TCARecursionApp.swift */,
 				3353D41E280AFCC000B2A626 /* TimelineView.swift */,
 				3353D421280AFDA200B2A626 /* TimelineLogCell.swift */,
 				3353D424280AFE6D00B2A626 /* ProfileView.swift */,
@@ -323,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6E014281A932A005B06C0 /* TCARecursionApp.swift in Sources */,
 				3353D422280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
 				3334413C282201D200414652 /* Reducer+Extension.swift in Sources */,
 				3353D425280AFE6D00B2A626 /* ProfileView.swift in Sources */,
@@ -336,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6E015281A932A005B06C0 /* TCARecursionApp.swift in Sources */,
 				3353D423280AFDA200B2A626 /* TimelineLogCell.swift in Sources */,
 				3334413D282201D200414652 /* Reducer+Extension.swift in Sources */,
 				3353D426280AFE6D00B2A626 /* ProfileView.swift in Sources */,
