@@ -15,7 +15,7 @@ struct TimelineLogCellState: Equatable, Identifiable {
     var profileState: ProfileState? = nil
 }
 
-enum TimelineLogCellAction: Equatable {
+indirect enum TimelineLogCellAction: Equatable {
     case profileViewDismissed
     case profileAction(ProfileAction)
 }
@@ -24,23 +24,25 @@ enum TimelineLogCellAction: Equatable {
 struct TimelineLogCellEnvironment {
 }
 
-let timelineLogCellStateReducer = Reducer<TimelineLogCellState, TimelineLogCellAction, TimelineLogCellEnvironment> { state, action, env in
-    switch action {
-    default:
-        return .none
-    }
-}
-    .combined(with:
-                profileReducer.optional().pullback(
-                    state: \.profileState,
-                    action: /TimelineLogCellAction.profileAction,
-                    environment: { _ in .init() }
-                )
-    )
+let timelineLogCellStateReducer = Reducer<TimelineLogCellState,
+                                          TimelineLogCellAction,
+                                          TimelineLogCellEnvironment> { state, action, env in
+                                              switch action {
+                                              case .profileViewDismissed:
+                                                  state.profileState = nil
+                                                  return .none
+                                              case .profileAction:
+                                                  return profileReducer.optional().pullback(
+                                                    state: \TimelineLogCellState.profileState,
+                                                    action: /TimelineLogCellAction.profileAction,
+                                                    environment: { _ in ProfileEnvironment() }
+                                                  )
+                                                  .run(&state, action, env)
+                                              }
+                                          }
 
 struct TimelineLogCell: View {
     var store: Store<TimelineLogCellState, TimelineLogCellAction>
-
     var body: some View {
         WithViewStore(store) { viewStore in
             VStack(alignment: .center) {
@@ -69,7 +71,7 @@ struct TimelineLogCell: View {
                     EmptyView()
                 }
                 .hidden()
-
+                
                 Spacer()
             }
         }

@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct RecursiveSampleAppTCAApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup<TimelineView> {
             TimelineView(store: .init(initialState: TimelineState(),
                                       reducer: timelineReducer,
                                       environment: .init()))

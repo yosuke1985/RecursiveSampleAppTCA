@@ -11,30 +11,29 @@ import SwiftUI
 
 
 struct ProfileState: Equatable, Identifiable {
-    var id = UUID()
-    var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = []
+    @Cow var id = UUID()
+    @Cow var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = []
 }
 
 enum ProfileAction: Equatable {
-    case showProfileEditView
     case timelineLogCellAction(index: TimelineLogCellState.ID, action: TimelineLogCellAction)
 }
 
 struct ProfileEnvironment {
 }
 
-let profileReducer = Reducer<ProfileState, ProfileAction, ProfileEnvironment> { state, action, env in
+let profileReducer = Reducer<ProfileState, ProfileAction, ProfileEnvironment>.recurse { `self`, state, action, env in
     switch action {
+    case .timelineLogCellAction:
+
+        return self.forEach(state: \ProfileState.timelineLogCellStateList,
+                            action: /ProfileAction.timelineLogCellAction(index:action:),
+                            environment: {_ in ProfileEnvironment() })
+                .run(&state, action, env)
     default:
         return .none
     }
 }
-    .combined(with:
-                timelineLogCellStateReducer.reducer
-        .forEach(state: \.timelineLogCellStateList,
-                 action: /ProfileAction.timelineLogCellAction(index:action:),
-                 environment: { _ in init() } )
-    )
 
 struct ProfileView: View {
     var store: Store<ProfileState, ProfileAction>
