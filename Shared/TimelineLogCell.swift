@@ -16,6 +16,7 @@ struct TimelineLogCellState: Equatable, Identifiable {
 }
 
 indirect enum TimelineLogCellAction: Equatable {
+    case goToProfileView
     case profileViewDismissed
     case profileAction(ProfileAction)
 }
@@ -28,6 +29,9 @@ let timelineLogCellStateReducer = Reducer<TimelineLogCellState,
                                           TimelineLogCellAction,
                                           TimelineLogCellEnvironment> { state, action, env in
                                               switch action {
+                                              case .goToProfileView:
+                                                  state.profileState = .init()
+                                                  return .none
                                               case .profileViewDismissed:
                                                   state.profileState = nil
                                                   return .none
@@ -47,6 +51,13 @@ struct TimelineLogCell: View {
         WithViewStore(store) { viewStore in
             VStack(alignment: .center) {
                 cellHeader
+
+                Button {
+                    viewStore.send(.goToProfileView)
+                } label: {
+                    Text("Go To ProfileView")
+                }
+                
             }
         }
     }
