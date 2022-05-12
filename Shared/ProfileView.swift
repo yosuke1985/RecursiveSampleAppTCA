@@ -26,16 +26,18 @@ let profileReducer = Reducer<ProfileState, ProfileAction, ProfileEnvironment>.re
         return self
             .optional()
             .pullback(
-                  state: \TimelineLogCellState.profileState,
-                  action: /TimelineLogCellAction.profileAction,
-                  environment: { _ in ProfileEnvironment() }
+                state: \TimelineLogCellState.profileState,
+                action: /TimelineLogCellAction.profileAction,
+                environment: { _ in ProfileEnvironment() }
             )
             .forEach(state: \ProfileState.timelineLogCellStateList,
-                            action: /ProfileAction.timelineLogCellAction(index:action:),
-                            environment: {_ in ProfileEnvironment() })
+                     action: /ProfileAction.timelineLogCellAction(index:action:),
+                     environment: {_ in ProfileEnvironment() })
             .run(&state, action, env)
     }
 }
+    .debug()
+
 
 struct ProfileView: View {
     var store: Store<ProfileState, ProfileAction>
@@ -57,7 +59,6 @@ struct ProfileView: View {
                 ),
                 content: TimelineLogCell.init(store:)
             )
-            .padding()
         }
         .navigationTitle("ProfileView")
     }

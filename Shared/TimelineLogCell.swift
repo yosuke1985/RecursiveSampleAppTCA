@@ -49,6 +49,7 @@ let timelineLogCellStateReducer = Reducer<TimelineLogCellState,
                                                   .run(&state, action, env)
                                               }
                                           }
+    .debug()
 
 struct TimelineLogCell: View {
     var store: Store<TimelineLogCellState, TimelineLogCellAction>

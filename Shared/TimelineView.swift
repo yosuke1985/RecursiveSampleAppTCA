@@ -25,6 +25,7 @@ let timelineReducer = Reducer<TimelineState, TimelineAction, TimelineEnvironment
                                         action: /TimelineAction.timelineLogCellAction(index: action:),
                                         environment: { _ in TimelineLogCellEnvironment()} )
 )
+    .debug()
 
 struct TimelineView: View {
     var store: Store<TimelineState, TimelineAction>
