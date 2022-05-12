@@ -10,7 +10,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct TimelineState: Equatable {
-    var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = []
+    var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = [.init(), .init(), .init()]
 }
 
 enum TimelineAction: Equatable {
@@ -31,16 +31,17 @@ struct TimelineView: View {
 
     var body: some View {
         WithViewStore(store) { _ in
-            List {
-                ForEachStore(
-                    self.store.scope(
-                        state: \.timelineLogCellStateList,
-                        action: TimelineAction.timelineLogCellAction(index:action:)
-                    ),
-                    content: TimelineLogCell.init(store:)
-                )
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
+            NavigationView {
+                VStack {
+                    ForEachStore(
+                        self.store.scope(
+                            state: \.timelineLogCellStateList,
+                            action: TimelineAction.timelineLogCellAction(index:action:)
+                        ),
+                        content: TimelineLogCell.init(store:)
+                    )
+                }
+                .navigationTitle("TimelineView")
             }
         }
     }

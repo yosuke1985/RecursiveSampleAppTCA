@@ -10,28 +10,30 @@ import ComposableArchitecture
 import SwiftUI
 
 
-struct ProfileState: Equatable, Identifiable {
-    @Cow var id = UUID()
-    @Cow var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = []
+struct ProfileState: Equatable {
+    @Cow var timelineLogCellStateList: IdentifiedArrayOf<TimelineLogCellState> = [.init(), .init(), .init()]
 }
 
-enum ProfileAction: Equatable {
+indirect enum ProfileAction: Equatable {
     case timelineLogCellAction(index: TimelineLogCellState.ID, action: TimelineLogCellAction)
 }
 
-struct ProfileEnvironment {
-}
+struct ProfileEnvironment {}
 
 let profileReducer = Reducer<ProfileState, ProfileAction, ProfileEnvironment>.recurse { `self`, state, action, env in
     switch action {
     case .timelineLogCellAction:
-
-        return self.forEach(state: \ProfileState.timelineLogCellStateList,
+        return self
+            .optional()
+            .pullback(
+                  state: \TimelineLogCellState.profileState,
+                  action: /TimelineLogCellAction.profileAction,
+                  environment: { _ in ProfileEnvironment() }
+            )
+            .forEach(state: \ProfileState.timelineLogCellStateList,
                             action: /ProfileAction.timelineLogCellAction(index:action:),
                             environment: {_ in ProfileEnvironment() })
-                .run(&state, action, env)
-    default:
-        return .none
+            .run(&state, action, env)
     }
 }
 
@@ -40,10 +42,9 @@ struct ProfileView: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-            List {
+            VStack {
                 timelineView
             }
-            .listStyle(PlainListStyle())
         }
     }
 
@@ -56,8 +57,9 @@ struct ProfileView: View {
                 ),
                 content: TimelineLogCell.init(store:)
             )
-            .listRowInsets(EdgeInsets())
+            .padding()
         }
+        .navigationTitle("ProfileView")
     }
 }
 

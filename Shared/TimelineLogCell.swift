@@ -13,11 +13,13 @@ import ComposableArchitecture
 struct TimelineLogCellState: Equatable, Identifiable {
     var id: UUID = UUID()
     var profileState: ProfileState? = nil
+    var isHeartFill: Bool = false
 }
 
 indirect enum TimelineLogCellAction: Equatable {
     case goToProfileView
     case profileViewDismissed
+    case toggleLike
     case profileAction(ProfileAction)
 }
 
@@ -34,6 +36,9 @@ let timelineLogCellStateReducer = Reducer<TimelineLogCellState,
                                                   return .none
                                               case .profileViewDismissed:
                                                   state.profileState = nil
+                                                  return .none
+                                              case .toggleLike:
+                                                  state.isHeartFill.toggle()
                                                   return .none
                                               case .profileAction:
                                                   return profileReducer.optional().pullback(
@@ -57,7 +62,30 @@ struct TimelineLogCell: View {
                 } label: {
                     Text("Go To ProfileView")
                 }
-                
+
+                Button {
+                    viewStore.send(.toggleLike)
+                } label: {
+                    viewStore.isHeartFill ? Image(systemName: "heart.fill") : Image(systemName: "heart")
+                }
+
+                NavigationLink(
+                    destination:
+                        IfLetStore(
+                            store.scope(
+                                state: \.profileState,
+                                action: TimelineLogCellAction.profileAction
+                            ),
+                            then: ProfileView.init(store:)
+                        )
+                    ,
+                    isActive:  viewStore.binding(
+                        get: { $0.profileState != nil },
+                        send: .profileViewDismissed
+                    )
+                ) {
+                    EmptyView()
+                }
             }
         }
     }
